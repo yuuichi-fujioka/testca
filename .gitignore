@@ -1,0 +1,15 @@
+ca/serial
+ca/index.txt
+ca/cacert.der
+ca/cacert.pem
+ca/index.txt.attr
+ca/index.txt.attr.old
+ca/index.txt.old
+ca/newcerts/*
+ca/private/cakey.pem
+ca/serial.old
+site/cert.pem
+site/site.csr
+site/site.pem
+
+
