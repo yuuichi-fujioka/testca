@@ -122,7 +122,7 @@ x509_extensions = v3_ca # The extentions to add to the self signed cert
 # WARNING: ancient versions of Netscape crash on BMPStrings or UTF8Strings.
 string_mask = utf8only
 
-# req_extensions = v3_req # The extensions to add to a certificate request
+req_extensions = v3_req # The extensions to add to a certificate request
 
 [ req_distinguished_name ]
 countryName         = Country Name (2 letter code)
@@ -200,6 +200,7 @@ authorityKeyIdentifier=keyid,issuer
 # An alternative to produce certificates that aren't
 # deprecated according to PKIX.
 # subjectAltName=email:move
+subjectAltName=@alt_names
 
 # Copy subject details
 # issuerAltName=issuer:copy
@@ -220,6 +221,7 @@ authorityKeyIdentifier=keyid,issuer
 
 basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
 
 [ v3_ca ]
 
@@ -348,4 +350,8 @@ tsa_name        = yes   # Must the TSA name be included in the reply?
                 # (optional, default: no)
 ess_cert_id_chain   = no    # Must the ESS cert id chain be included?
                 # (optional, default: no)
+
+[alt_names]
+DNS.1 = xip.io
+DNS.2 = *.xip.io
 
